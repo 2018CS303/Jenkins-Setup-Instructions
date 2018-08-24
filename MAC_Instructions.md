@@ -3,4 +3,5 @@
 - Directly opening the file will open Jenkins installer
 - You can skip changing the home folder for now. By default the home folder is `/Users/Shared/Jenkins/Home`
 - The initial admin password is located at `/Users/Shared/Jenkins/Home/secrets/initialAdminPassword`
+- To uninstall Jenkins on OSX by running the command `/Library/Application\ Support/Jenkins/Uninstall.command`
 - Rest all steps are same
