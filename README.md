@@ -81,8 +81,9 @@ More terminologies can be found [here](https://jenkins.io/doc/book/glossary/#pro
 
 - Before starting Jenkins, let us change the default **$JENKINS_HOME** directory.
 
-  - First create a directoy named **Jenkins** at any location you prefer. For this example, I will create it in my home folder `/home/rajula/Jenkins`. (To create a folder use `mkdir /home/rajula/Jenkins`)
-  - Modify the contents of the file `/etc/default/jenkins`. Change the parameter of **$JENKINS_HOME** to the newly created folder path. As it is in `/etc/` directory, you need to sudo permissions to edit the file
+  - First create a directoy named **Jenkins** at any location you prefer. For this example, I will create it in my home folder `/home/rajula/Jenkins`. (To create a folder use `mkdir /home/rajula/Jenkins`). The path `/home/rajula/Jenkins` needs to be changed to an appropriate path w.r.t your system
+  - Since, Jenkins runs the service as a *jenkins* user, we need to give write permissions to *jenkins* user for the newly created directoy. To do so, run the comand `sudo chmod 777 -R /home/rajula/Jenkins`
+  - Modify the contents of the file `/etc/default/jenkins`. Change the parameter of **$JENKINS_HOME** to the newly created folder path. As it is in `/etc/` directory, you need to sudo permissions to edit the file. You can edit the file using any editor such as vim, gedit, nano etc. To edit it run the command `sudo gedit /etc/default/jenkins`
 
 - Jenkins is now installed as a daemon service. To start Jenkins run the command
 
@@ -94,6 +95,8 @@ More terminologies can be found [here](https://jenkins.io/doc/book/glossary/#pro
 
   Make sure to stop Jenkins using the above command, when you are not using it
 
+- In case, you need to restart Jenkins at any point of time, run the command
+`sudo systemctl restart jenkins`
 
   # Using Jenkins
 
